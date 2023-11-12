@@ -16,7 +16,7 @@
                         <div class="form-group">
                             <label for="project">Project Description</label>
                             <!-- <input type="text" name="name" class="form-control" placeholder="project name"> -->
-                            <textarea class="form-control" name="description" id="skillTextArea"></textarea>
+                            <textarea class="form-control" name="description" id="projectTextArea"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="technology">Project Technology</label>

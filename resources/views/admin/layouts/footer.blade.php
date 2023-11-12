@@ -33,7 +33,14 @@
 <script src="{{ asset('admin') }}/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="{{ asset('admin') }}/js/dashboard.js"></script>
 <script src="{{ asset('admin') }}/js/Chart.roundedBarCharts.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!-- End custom js for this page-->
+
+
+
+
 </body>
 
 </html>

@@ -1,12 +1,13 @@
 @extends('admin.layouts.master')
 
 @section('body_content')
-@section('body_content')
 <div class="container text-center">
     <div class="row">
         <div class="col-lg-10 offset-1 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+
+
                     <h4 class="card-title">Skills Table</h4>
 
                     <div class="table-responsive">
@@ -59,4 +60,14 @@
     </div>
 </div>
 @endsection
-@endsection
+@if(session('success'))
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: "{{ session('success') }}",
+        });
+    });
+</script>
+@endif
