@@ -44,4 +44,8 @@ class SkillController extends Controller
             return redirect()->route('skills.create')->with('error', 'something went wrong');
         }
     }
+
+    public function show(Skill $skill){
+        return view('admin.skills.skillDetails', compact('skill'));
+    }
 }

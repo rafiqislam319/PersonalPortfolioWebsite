@@ -27,7 +27,7 @@
                                     <td>{{ $skill->name }}</td>
                                     <td class="text-danger"><img src="{{ asset('uploadedImage/admin/skill/'.$skill->image) }}" alt="skill image"></td>
                                     <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
+                                        <a href="{{ route('skills.show', $skill->id) }}"><i class="ti-eye p-2"></i></a>
                                         <a href="#"><i class="ti-pencil-alt p-2"></i></a>
                                         <a href="#"><i class="ti-trash p-2"></i></a>
                                     </td>
