@@ -10,7 +10,8 @@ class SkillController extends Controller
 {
     public function index()
     {
-        return view('admin.skills.index');
+        $skills = Skill::paginate(5);
+        return view('admin.skills.index', compact('skills'));
     }
 
     public function create()
@@ -37,9 +38,9 @@ class SkillController extends Controller
             $skillData['image'] = $imageName;
         }
 
-        if(Skill::create($skillData)){
-        return redirect()->route('skills.index')->with('success', 'Skill Saved successfully');
-        }else{
+        if (Skill::create($skillData)) {
+            return redirect()->route('skills.index')->with('success', 'Skill Saved successfully');
+        } else {
             return redirect()->route('skills.create')->with('error', 'something went wrong');
         }
     }

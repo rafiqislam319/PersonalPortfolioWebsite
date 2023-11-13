@@ -21,38 +21,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($skills as $skill)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Web developer</td>
-                                    <td class="text-danger"><img src="" alt="skill image"></td>
+                                    <td>{{ $skill->id }}</td>
+                                    <td>{{ $skill->name }}</td>
+                                    <td class="text-danger"><img src="{{ asset('uploadedImage/admin/skill/'.$skill->image) }}" alt="skill image"></td>
                                     <td>
                                         <a href="#"><i class="ti-eye p-2"></i></a>
                                         <a href="#"><i class="ti-pencil-alt p-2"></i></a>
                                         <a href="#"><i class="ti-trash p-2"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Web developer</td>
-                                    <td class="text-danger"><img src="" alt="skill image"></td>
-                                    <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
-                                        <a href="#"><i class="ti-pencil-alt p-2"></i></a>
-                                        <a href="#"><i class="ti-trash p-2"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Web developer</td>
-                                    <td class="text-danger"><img src="" alt="skill image"></td>
-                                    <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
-                                        <a href="#"><i class="ti-pencil-alt p-2"></i></a>
-                                        <a href="#"><i class="ti-trash p-2"></i></a>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        {!! $skills->withQueryString()->links('pagination::bootstrap-5') !!}
                     </div>
                 </div>
             </div>

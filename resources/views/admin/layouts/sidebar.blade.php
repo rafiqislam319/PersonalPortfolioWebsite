@@ -15,7 +15,7 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('skills.index') }}">All Skill</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('skills.index') }}">My Skill</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('skills.create') }}">Add Skill</a></li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('projects.index') }}">All Project</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('projects.index') }}">My Project</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('projects.create') }}">Add Project</a></li>
                 </ul>
             </div>
