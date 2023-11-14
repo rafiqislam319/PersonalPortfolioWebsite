@@ -35,7 +35,7 @@
 <script src="{{ asset('admin') }}/js/Chart.roundedBarCharts.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
+<script src="{{ asset('admin') }}/js/tinymce.js"></script>
 
 <!-- End custom js for this page-->
 

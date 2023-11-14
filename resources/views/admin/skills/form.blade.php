@@ -19,9 +19,9 @@
                         </div>
                         <div class="form-group">
                             <label for="skill">Skill Image</label>
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" name="image" class="form-control pb-4">
                         </div>
-                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <button type="submit" class="btn btn-primary me-2">Save</button>
                         <button class="btn btn-info">Cancel</button>
                     </form>
                 </div>
