@@ -14,24 +14,28 @@
                                 <tr>
                                     <th>Project Name</th>
                                     <th>Technology</th>
-                                    <th>Live Url</th>
-                                    <th>Github Url</th>
+                                    <th>Description</th>
+                                    <!-- <th>Live Url</th> -->
+                                    <!-- <th>Github Url</th> -->
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($projects as $project )
                                 <tr>
-                                    <td>Porfolio Project</td>
-                                    <td>bootstrap, laravel</td>
-                                    <td>www.github.com</td>
-                                    <td>www.google.com</td>
+                                    <td>{{ $project->name }}</td>
+                                    <td>{{ $project->technology }}</td>
+                                    <td>{{ $project->description }}</td>
+                                    <!-- <td>{{ $project->github_url }}</td> -->
+                                    <!-- <td>{{ $project->live_url }}</td> -->
                                     <td>
                                         <a href="#" style="text-decoration: none;"><i class="ti-eye p-2 text-info"></i></a>
                                         <a href="#" style="text-decoration: none;"><i class="ti-pencil-alt p-2 text-warning"></i></a>
                                         <a href="#" style="text-decoration: none;"><i class="ti-trash p-2 text-danger"></i></a>
                                     </td>
                                 </tr>
+                                @endforeach
+
 
                             </tbody>
                         </table>
