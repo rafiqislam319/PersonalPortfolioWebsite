@@ -1,7 +1,6 @@
 @extends('admin.layouts.master')
 
 @section('body_content')
-@section('body_content')
 <div class="container text-center">
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
@@ -21,39 +20,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 <tr>
                                     <td>Porfolio Project</td>
                                     <td>bootstrap, laravel</td>
                                     <td>www.github.com</td>
                                     <td>www.google.com</td>
                                     <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
-                                        <a href="#"><i class="ti-pencil-alt p-2"></i></a>
-                                        <a href="#"><i class="ti-trash p-2"></i></a>
+                                        <a href="#" style="text-decoration: none;"><i class="ti-eye p-2 text-info"></i></a>
+                                        <a href="#" style="text-decoration: none;"><i class="ti-pencil-alt p-2 text-warning"></i></a>
+                                        <a href="#" style="text-decoration: none;"><i class="ti-trash p-2 text-danger"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Porfolio Project</td>
-                                    <td>bootstrap, laravel</td>
-                                    <td>www.github.com</td>
-                                    <td>www.google.com</td>
-                                    <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
-                                        <a href="#"><i class="ti-pencil-alt p-2"></i></a>
-                                        <a href="#"><i class="ti-trash p-2"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Porfolio Project</td>
-                                    <td>bootstrap, laravel</td>
-                                    <td>www.github.com</td>
-                                    <td>www.google.com</td>
-                                    <td>
-                                        <a href="#"><i class="ti-eye p-2"></i></a>
-                                        <a href="#"><i class="ti-pencil-alt p-2"></i></a>
-                                        <a href="#"><i class="ti-trash p-2"></i></a>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -63,4 +42,14 @@
     </div>
 </div>
 @endsection
-@endsection
+@if(session('success'))
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: "{{ session('success') }}",
+        });
+    });
+</script>
+@endif

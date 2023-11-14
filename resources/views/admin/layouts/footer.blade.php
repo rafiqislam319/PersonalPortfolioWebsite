@@ -43,7 +43,7 @@
 <script>
     $('#tinyEditor').tinymce({
 
-        height: 200,
+        height: 300,
 
         menubar: false,
 
