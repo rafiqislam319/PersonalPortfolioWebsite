@@ -29,7 +29,7 @@
                                     <!-- <td>{{ $project->github_url }}</td> -->
                                     <!-- <td>{{ $project->live_url }}</td> -->
                                     <td>
-                                        <a href="#" style="text-decoration: none;"><i class="ti-eye p-2 text-info"></i></a>
+                                        <a href="{{ route('projects.show', $project->id) }}" style="text-decoration: none;"><i class="ti-eye p-2 text-info"></i></a>
                                         <a href="#" style="text-decoration: none;"><i class="ti-pencil-alt p-2 text-warning"></i></a>
                                         <a href="#" style="text-decoration: none;"><i class="ti-trash p-2 text-danger"></i></a>
                                     </td>

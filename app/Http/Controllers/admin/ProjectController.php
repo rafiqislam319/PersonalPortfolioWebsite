@@ -28,10 +28,12 @@ class ProjectController extends Controller
             'name' => 'required',
             'skill_id' => 'required|exists:skills,id',
             'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg'
-        ],[
+        ], [
             'name.required' => 'Project name is required',
             'skill_id.exists' => 'Invalid skill selected.',
         ]);
+
+        $imageNames = [];
 
         if ($request->hasFile('image')) {
             $imageFiles = $request->file('image');
@@ -39,12 +41,10 @@ class ProjectController extends Controller
 
             foreach ($imageFiles as $imageFile) {
                 $imagePath = public_path('uploadedImage/admin/projects/');
-                $imageName = date('YmdHis') . "." . $imageFile->getClientOriginalExtension();
+                $imageName = microtime(true) . "." . $imageFile->getClientOriginalExtension();
                 $imageFile->move($imagePath, $imageName);
                 $imageNames[] = $imageName;
             }
-        } else {
-            $imageNames = [];
         }
 
         // Retrieve skill_id from the request
@@ -60,14 +60,20 @@ class ProjectController extends Controller
             'technology' => $request->input('technology'),
             'github_url' => $request->input('github_url'),
             'live_url' => $request->input('live_url'),
-            'image' => json_encode($imageNames),
+            // 'image' => json_encode($imageNames),
+            'image' => empty($imageNames) ? null : json_encode($imageNames),
         ];
 
         // dd($projectData);
-        if(Project::create($projectData)){
+        if (Project::create($projectData)) {
             return redirect()->route('projects.index')->with('success', 'Project Saved successfully');
         } else {
             return redirect()->route('projects.create')->with('error', 'something went wrong');
         }
+    }
+
+    public function show(Project $project)
+    {
+        return view('admin.projects.projectDetails', compact('project'));
     }
 }
