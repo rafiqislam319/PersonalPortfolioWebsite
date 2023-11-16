@@ -31,7 +31,11 @@
                                     <td>
                                         <a href="{{ route('projects.show', $project->id) }}" style="text-decoration: none;"><i class="ti-eye p-2 text-info"></i></a>
                                         <a href="{{ route('projects.edit', $project->id) }}" style="text-decoration: none;"><i class="ti-pencil-alt p-2 text-warning"></i></a>
-                                        <a href="#" style="text-decoration: none;"><i class="ti-trash p-2 text-danger"></i></a>
+                                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn text-danger p-0" type="submit"><i class="ti-trash xp-2"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

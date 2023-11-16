@@ -154,4 +154,33 @@ class ProjectController extends Controller
             return redirect()->route('projects.edit', $project)->with('error', 'Something went wrong');
         }
     }
+
+
+    public function destroy(Project $project)
+    {
+        // Delete associated images from public folder and database
+        if (!is_null($project->image)) {
+            $images = json_decode($project->image);
+
+            if (!empty($images)) {
+                foreach ($images as $image) {
+                    $imagePath = public_path('uploadedImage/admin/projects/' . $image);
+
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    }
+                }
+            }
+        }
+
+        // Delete the project from the database
+        $deleteResult = $project->delete();
+
+        if ($deleteResult) {
+            return redirect()->route('projects.index')->with('success', 'Project deleted successfully');
+        } else {
+            return redirect()->route('projects.edit', $project)->with('error', 'Failed to delete the project');
+        }
+    }
+
 }
